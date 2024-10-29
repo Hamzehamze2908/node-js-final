@@ -16,3 +16,9 @@ app.post('/api/points', (req, res) => {
 app.get('/api/points', (req, res) => {
     res.json(points);
 });
+
+app.delete('/api/points/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    points = points.filter(point => point.id !== id);
+    res.sendStatus(204);
+});
