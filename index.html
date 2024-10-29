@@ -14,3 +14,9 @@
     <h2>הוסף נקודה</h2>
     <input type="text" id="point-name" placeholder="שם הנקודה">
     <button onclick="addPoint()">הוסף</button>
+    <script>
+        async function fetchPoints() {
+            const response = await fetch('/api/points');
+            const points = await response.json();
+            const list = document.getElementById('points-list');
+            list.innerHTML = '';
