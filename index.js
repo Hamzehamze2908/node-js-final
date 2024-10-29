@@ -22,3 +22,8 @@ app.delete('/api/points/:id', (req, res) => {
     points = points.filter(point => point.id !== id);
     res.sendStatus(204);
 });
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+3. קוד צד לקוח (HTML/JavaScript)
