@@ -6,3 +6,10 @@ let points = [];
 
 app.use(bodyParser.json());
 app.use(express.static('client'));
+
+app.post('/api/points', (req, res) => {
+    const { name } = req.body;
+    const newPoint = { id: points.length + 1, name };
+    points.push(newPoint);
+    res.status(201).json(newPoint);
+});
