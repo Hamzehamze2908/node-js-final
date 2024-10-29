@@ -13,3 +13,6 @@ app.post('/api/points', (req, res) => {
     points.push(newPoint);
     res.status(201).json(newPoint);
 });
+app.get('/api/points', (req, res) => {
+    res.json(points);
+});
