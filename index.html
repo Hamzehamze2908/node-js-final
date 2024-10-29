@@ -40,4 +40,12 @@
             document.getElementById('point-name').value = '';
             fetchPoints();
         }
+ async function deletePoint(id) {
+            await fetch(`/api/points/${id}`, { method: 'DELETE' });
+            fetchPoints();
+        }
 
+        fetchPoints();
+    </script>
+</body>
+</html>
