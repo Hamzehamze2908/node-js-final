@@ -20,3 +20,13 @@
             const points = await response.json();
             const list = document.getElementById('points-list');
             list.innerHTML = '';
+
+            points.forEach(point => {
+                list.innerHTML += `
+                    <div>
+                        ${point.name} 
+                        <button onclick="deletePoint(${point.id})">מחק</button>
+                    </div>
+                `;
+            });
+        }
