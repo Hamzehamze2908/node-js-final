@@ -30,3 +30,14 @@
                 `;
             });
         }
+        async function addPoint() {
+            const name = document.getElementById('point-name').value;
+            await fetch('/api/points', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name })
+            });
+            document.getElementById('point-name').value = '';
+            fetchPoints();
+        }
+
